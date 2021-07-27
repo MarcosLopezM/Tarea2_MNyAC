@@ -1,0 +1,5 @@
+# Ignoramos checkpoint de notebook
+Tarea2-checkpoint.ipynb
+
+# Ignoramos carpeta de ambiente virtual
+venv/
