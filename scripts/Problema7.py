@@ -28,5 +28,5 @@ In: bool("")
 Out: False
 
 In: bool("   ")
-Out: False
+Out: True
 """
