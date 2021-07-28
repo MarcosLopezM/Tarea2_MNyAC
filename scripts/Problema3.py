@@ -1,7 +1,7 @@
 # Problema 3
 
 def suerte(n):
-    if 10 <= n <= 10 ** 6:
+    if 10 <= n < 10 ** 6:
         nList = list(map(int, str(n)))
         if len(nList) % 2 == 0:
             Half = len(nList) // 2
@@ -10,11 +10,11 @@ def suerte(n):
             if sum(FirstHalf) == sum(SecondHalf):
                 return True
             else:
-                return False
+                return False 
         else:
-            pass
+            print(f"El número tiene {len(nList)} dígitos.")
     else: 
-        pass 
+        print("El número es muy grande.") 
 
 
 """
