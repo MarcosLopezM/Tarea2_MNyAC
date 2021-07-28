@@ -11,7 +11,7 @@ fig, ax = plt.subplots(figsize = (10, 5))
 ax.set_title("Histogramas de distribuciones normales diferentes")
 ax.set_xlabel("X")
 ax.set_ylabel("Y")
-plt.hist(x, NBins, facecolor = 'deeppink');
-plt.hist(y, NBins, facecolor = 'darkblue');
-plt.hist(z, NBins, facecolor = 'darkred');
+ax.hist(x, NBins, facecolor = 'deeppink');
+ax.hist(y, NBins, facecolor = 'darkblue');
+ax.hist(z, NBins, facecolor = 'darkred');
 plt.show()
