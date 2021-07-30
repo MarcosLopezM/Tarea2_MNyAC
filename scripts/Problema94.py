@@ -1,4 +1,4 @@
-# Problema 9. Incisos 9.3
+# Problema 9. Incisos 9.4
 import matplotlib.pyplot as plt
 import numpy as np 
 
