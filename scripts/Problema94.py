@@ -15,4 +15,6 @@ ax.scatter(indices, y, c = colors[1], label = "Distr. 2")
 ax.scatter(indices, z, c = colors[2], label = "Distr. 3")
 ax.set_title("Gráfica de dispersión de las diferentes distribuciones")
 ax.legend()
+
+plt.savefig("plots/problema94.pdf")
 plt.show()
