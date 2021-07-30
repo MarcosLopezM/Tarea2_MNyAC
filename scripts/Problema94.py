@@ -10,9 +10,9 @@ colors = ['deeppink', 'darkblue', 'darkred']
 
 
 fig, ax = plt.subplots(figsize = (10, 5))
-ax.scatter(indices, x, c = colors[0], label = "Dist. 1")
-ax.scatter(indices, y, c = colors[1], label = "Dist. 2")
-ax.scatter(indices, z, c = colors[2], label = "Dist. 3")
+ax.scatter(indices, x, c = colors[0], label = "Distr. 1")
+ax.scatter(indices, y, c = colors[1], label = "Distr. 2")
+ax.scatter(indices, z, c = colors[2], label = "Distr. 3")
 ax.set_title("Gráfica de dispersión de las diferentes distribuciones")
 ax.legend()
 plt.show()
