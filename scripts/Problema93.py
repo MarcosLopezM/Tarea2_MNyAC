@@ -17,4 +17,6 @@ ax.hist(y, bins = 'auto', facecolor = colors[1]);
 ax.hist(z, bins = 'auto', facecolor = colors[2]);
 for i in mu_n:
     ax.axvline(x = i, color = 'k', linestyle = '--')
+
+plt.savefig("plots/problema93.pdf")    
 plt.show()
