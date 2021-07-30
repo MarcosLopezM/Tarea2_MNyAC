@@ -13,4 +13,6 @@ ax.set_ylabel("Y")
 ax.hist(x, bins = 'auto', facecolor = 'deeppink');
 ax.hist(y, bins = 'auto', facecolor = 'darkblue');
 ax.hist(z, bins = 'auto', facecolor = 'darkred');
+
+plt.savefig("plots/problema9192.pdf")
 plt.show()
