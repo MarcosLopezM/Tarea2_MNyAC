@@ -39,5 +39,6 @@ ax2.set_xlabel("X")
 ax2.set_ylabel("Y")
 ax3.legend()
 
+plt.savefig("plots/problema95.pdf")
 plt.tight_layout()
 plt.show()
