@@ -1,6 +1,6 @@
 #Problema 6
 
-def remplazo(string):
+def reemplazo(string):
     liststring = string.split()
     if 1 <= len(liststring) <= 10:
         newstring = "-".join(liststring)
