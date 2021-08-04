@@ -44,5 +44,5 @@ class position:
         fig.tight_layout()
         fig.show()
 
-g = position(omega = 0.5)
-g.make_sim()
+post = position(omega = 0.5)
+post.make_sim()
