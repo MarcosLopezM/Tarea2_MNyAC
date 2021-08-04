@@ -21,7 +21,7 @@ class energias():
        
     def make_sim(self):
 
-        t = np.linspace(0, 20, 1000)
+        t = np.linspace(0, 50, 1000)
         K = self.kinetic(t)
         U = self.potential(t)
         T = K + U
@@ -31,7 +31,7 @@ class energias():
 
     def graphs(self, e1, e2, e3):
         
-        t = np.linspace(0, 20, 1000)
+        t = np.linspace(0, 50, 1000)
         fig, (ax1, ax2, ax3) = plt.subplots(nrows = 3, figsize=(10,10))
         fig.suptitle('Gráficas de Energía', y = 1.0)
 
@@ -53,5 +53,5 @@ class energias():
         fig.tight_layout(h_pad = 2)
         fig.show()
 
-E = energias(omega = 2)
+E = energias(omega = 0.5)
 E.make_sim()
