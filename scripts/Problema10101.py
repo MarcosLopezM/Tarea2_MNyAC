@@ -1,58 +1,48 @@
-# 1 Hacer una imagen ue muestre la posición de tres diferentes objetos que 
-# sigan la ecuación antes descrita con frecuencias naturales de w0, 2w0, 3w0
-# Suponer que todos los objetos tienen la misma amplitud de oscilación y 
-# la misma constante de fase.
-
-import numpy as np
 import matplotlib.pyplot as plt
-plt.rcParams.update({'font.size': 20})
+import numpy as np
 
 
-class oscilacion():
-    """
-    Clase que simula una masa en movimiento oscilatorio
-    """
-    def __init__(self, w, A=1, phi=np.pi/2):
-        self.A = A
-        self.phi = phi
-        self.w = w
-        
+class position:
 
-    def pos1_x(self, t):
-        res1 = self.A * np.cos(self.w*t+self.phi)
-        return res1
+    def __init__(self, omega, Xm = 1, phi = 0):
+        self.omega = omega 
+        self.Xm = Xm
+        self.phi = phi 
     
-    def pos2_x(self, t):
-        res2 = self.A * np.cos(2*self.w*t+self.phi)
-        return res2
-        
-    def pos3_x(self, t):
-        res3 = self.A * np.cos(3*self.w*t+self.phi)
-        return res3 
+    def mass1(self, t):
+        m1 = self.Xm * np.cos(self.omega * t + self.phi)
+        return m1 
+    
+    def mass2(self, t):
+        m2 = self.Xm * np.cos(2 * self.omega * t + self.phi)
+        return m2
+
+    def mass3(self, t):
+        m3 = self.Xm * np.cos(3 * self.omega * t + self.phi)
+        return m3
 
     def make_sim(self):
-
-        time_vec = np.linspace(0, 50, 150)
-        x1 = self.pos1_x(time_vec)
-        x2 = self.pos2_x(time_vec)
-        x3 = self.pos3_x(time_vec)
+        t = np.linspace(0, 20, 1000)
+        x1 = self.mass1(t)
+        x2 = self.mass2(t)
+        x3 = self.mass3(t)
         
-        self.plot_results(x1, x2, x3)
+        self.graphs(x1, x2, x3)
 
-
-    def plot_results(self, x1, x2, x3):
+    def graphs(self, x1, x2, x3):
         
-        time_vec = np.linspace(0, 50, 150)
-        fig, ax=plt.subplots(figsize=(15,7))
-        ax.set_xlabel('Tiempo(s)')
-        ax.set_ylabel('Distancia(m)')
-        plt.title('Gráfica 1.' )
+        t = np.linspace(0, 20, 1000)
+        fig, ax=plt.subplots(figsize=(10,5))
+        ax.set_title("Gráficas de x vs t para objetos con frecuencias naturales $\omega_{0},\, 2\omega_{0}\,y\,3\omega_{0}$")
+        ax.set_xlabel('Tiempo (s)')
+        ax.set_ylabel('Distancia (m)')
+        ax.plot(t, x1, label = 'Obj. 1 con $\omega_{0}$', c = 'deeppink')
+        ax.plot(t, x2, label = 'Obj. 1 con $2\omega_{0}$', c = 'b')
+        ax.plot(t, x3, label = 'Obj. 1 con $3\omega_{0}$', c = 'r')
+        ax.legend(bbox_to_anchor=(1, 1), loc='upper left');
+        ax.set_xlim(0, 20)
+        fig.tight_layout()
+        fig.show()
 
-        plt.plot(time_vec, x1, label='Objeto 1 con w', color="red")
-        plt.plot(time_vec, x2, label="Objeto 2 con 2w", color="blue")
-        plt.plot(time_vec, x3, label="Objeto 3 con 3w", color="green")
-        plt.legend(loc='best')
-        plt.xlim(0,50)
-
-g1 = oscilacion(w=.25)
-g1.make_sim()
+g = position(omega = 0.5)
+g.make_sim()
